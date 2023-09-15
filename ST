@@ -62,7 +62,45 @@ end)
 end
 end)
 end)
-local drops = serv:Channel("Sell Item")
+local drops = serv:Channel("Buy Item And Sell Item")
+local buy = nil
+local buyl = {}
+for i, c in pairs(game.ReplicatedStorage.BuyItemRemote:GetChildren()) do
+if c:IsA("RemoteEvent") then
+table.insert(buyl,c.Name)
+end
+end
+drops:Dropdown("Choose",buyl, function(tool) 
+for i, a in pairs(game.ReplicatedStorage.BuyItemRemote:GetChildren()) do
+if tool == a.Name then 
+buy = tool
+end
+end
+end)
+drops:Button("Chosse Item To Buy x1", function()
+game.ReplicatedStorage.BuyItemRemote[buy]:FireServer()
+end)
+drops:Button("Chosse Item To Buy x10", function()
+for _ = 1,10 do
+game.ReplicatedStorage.BuyItemRemote[buy]:FireServer()
+end
+end)
+drops:Button("Chosse Item To Buy x20", function()
+for _ = 1,20 do
+game.ReplicatedStorage.BuyItemRemote[buy]:FireServer()
+end
+end)
+drops:Button("Chosse Item To Buy x30", function()
+for _ = 1,30 do 
+game.ReplicatedStorage.BuyItemRemote[buy]:FireServer()
+end
+end)
+drops:Button("Chosse Item To Buy x50", function()
+for _ = 1,50 do
+game.ReplicatedStorage.BuyItemRemote[buy]:FireServer()
+end
+end)
+drops:Seperrator()
 drops:Toggle("Auto Sell All Item",false, function(k)
 getgenv().autosell = k
 while autosell do wait()
