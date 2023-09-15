@@ -62,3 +62,26 @@ end)
 end
 end)
 end)
+local drops = serv:Channel("Sell Item")
+drops:Toggle("Auto Sell All Item",false, function(k)
+getgenv().autosell = k
+while autosell do wait()
+for i, v in pairs(game.ReplicatedStorage.GlobalUsedRemotes:GetChildren()) do
+if v:IsA("RemoteEvent") and v.Name == "SellItem" then
+v:FireServer("Arrow")
+v:FireServer("Rokakaka")
+v:FireServer("Mysterious Camera")
+v:FireServer("Hamon Manual")
+v:FireServer("Stop Sign")
+v:FireServer("Stone Mask")
+v:FireServer("Barrel")
+v:FireServer("Spin Manual")
+v:FireServer("Bomu Bomu Devil Fruit")
+v:FireServer("Mochi Mochi Devil Fruit")
+v:FireServer("Bari Bari Devil Fruit")
+end
+end
+end
+end)
+
+
