@@ -100,7 +100,7 @@ for _ = 1,50 do
 game.ReplicatedStorage.BuyItemRemote[buy]:FireServer()
 end
 end)
-drops:Seperrator()
+drops:Seperator()
 drops:Toggle("Auto Sell All Item",false, function(k)
 getgenv().autosell = k
 while autosell do wait()
