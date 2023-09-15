@@ -3,9 +3,7 @@ local win = DiscordLib:Window("discord library")
 local serv = win:Server("Preview", "")
 local drops = serv:Channel("Auto Farm Item")
 drops:Toggle("Auto Farm Box, Barrel",false, function(o)
-local plr = game.Players.LocalPlayer
-local char = plr.Character
-local hr = char.HumanoidRootPart
+local hr = game.Players.LocalPlayer.Character.HumanoidRootPart
 getgenv().autoitem = o
 spawn(function()
 while autoitem do wait()
@@ -24,6 +22,7 @@ if c:IsA("ProximityPrompt") then
 hr.CFrame = v.CFrame*CFrame.new(0,3,0)
 wait(0.5)
 fireproximityprompt(c) 
+if autoitem == false then break end
 end
 end
 end
@@ -34,9 +33,7 @@ end
 end)
 end)
 drops:Toggle("Auto Farm Box, Barrel, Chest",false, function(o)
-local plr = game.Players.LocalPlayer
-local char = plr.Character
-local hr = char.HumanoidRootPart
+local hr = game.Players.LocalPlayer.Character.HumanoidRootPart
 getgenv().autoitem = o
 spawn(function()
 while autoitem do wait()
@@ -55,6 +52,7 @@ if c:IsA("ProximityPrompt") then
 hr.CFrame = v.CFrame*CFrame.new(0,3,0)
 wait(0.5)
 fireproximityprompt(c) 
+if autoitem == false then break end
 end
 end
 end
