@@ -161,7 +161,7 @@ local btns = serv:Channel("Player")
                  local plr = game:GetService("Players").LocalPlayer 
                  tps:TeleportToPlaceInstance(game.PlaceId, game.JobId, plr) 
  end)
-btns("Reset Character", function()
+btns:Button("Reset Character", function()
 game.Player.LocalPlayer.Character.Humanoid.Health = 0
 end)
 local sldrs = serv:Channel("Walk Speed") 
