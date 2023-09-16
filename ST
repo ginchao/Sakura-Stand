@@ -45,14 +45,12 @@ v:Destroy()
  elseif true then
 hr.CFrame = CFrame.new(-340.770599, 128.921249, 1732.3916, -0.104643226, -8.32820581e-16, -0.994509816, -1.12047516e-07, 1, 1.17897399e-08, 0.994509816, 1.12666072e-07, -0.104643226)
 wait() 
-fireproximityprompt(v.ProximityPrompt) wait()
-if v:IsA("Part") then
 for i, c in pairs(v:GetChildren()) do
 if c:IsA("ProximityPrompt") then
-hr.CFrame = v.CFrame*CFrame.new(0,3,0)
-wait(0.5)
+hr.CFrame = v.CFrame*CFrame.new(0,0,0) wait(0.4)
+if hr.CFrame == v.CFrame then
 fireproximityprompt(c) 
-if autoitem == false then break end
+else fireproximityprompt(v.ProximityPrompt)
 end
 end
 end
@@ -61,6 +59,24 @@ end
 end)
 end
 end)
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end)
 local drops = serv:Channel("Buy Item And Sell Item")
 local buy = nil
