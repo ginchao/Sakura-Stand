@@ -2,7 +2,7 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 local win = DiscordLib:Window("Test Hub")
 local serv = win:Server("Sakura Stand", "")
 local drops = serv:Channel("Auto Farm Item")
-drops:Toggle("Auto Farm Box, Barrel, Chest",false, function(o) 
+drops:Toggle("Auto Farm Box, Barrel",false, function(o) 
  local hr = game.Players.LocalPlayer.Character.HumanoidRootPart 
  getgenv().autoitem = o 
  spawn(function() 
