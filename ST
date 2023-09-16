@@ -10,15 +10,15 @@ drops:Toggle("Auto Farm Box, Barrel",false, function(o)
  if not getgenv().autoitem then break; end 
  pcall(function() 
  for i, v in pairs(game.Workspace.Item:GetChildren()) do 
- if v:FindFirstChild("Space14") then 
- v.Space14:Destroy() 
+ if v.Name == "Box" and v:FindFirstChild("Space14") then 
+ v:Destroy() 
   elseif true then 
  hr.CFrame = CFrame.new(-340.770599, 128.921249, 1732.3916, -0.104643226, -8.32820581e-16, -0.994509816, -1.12047516e-07, 1, 1.17897399e-08, 0.994509816, 1.12666072e-07, -0.104643226) 
  wait()  
  for i, c in pairs(v:GetChildren()) do 
 if v.Name ~= "Chest" then
  if c:IsA("ProximityPrompt") then 
- hr.CFrame = v.CFrame*CFrame.new(0,0,0) wait(0.4) 
+ hr.CFrame = v.CFrame*CFrame.new(3,2,0) wait(0.5) 
  if hr.CFrame == v.CFrame then 
  fireproximityprompt(c)  
  else fireproximityprompt(v.ProximityPrompt) 
