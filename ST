@@ -60,24 +60,6 @@ end)
 end
 end)
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-end)
 local drops = serv:Channel("Buy Item And Sell Item")
 local buy = nil
 local buyl = {}
